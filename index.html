@@ -6,8 +6,23 @@
     <meta name="description" content="Gotham: Zero Hour—24-hour Batman-themed college hackathon. Build real solutions in one night.">
     <title>Gotham: Zero Hour — 24-Hour Hackathon</title>
     <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
 <body data-theme="batman">
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+    <!-- <aside class="scroll-rail" aria-label="Mission sections"> -->
+        <!-- <span class="scroll-rail-label">MISSION INDEX</span> -->
+        <nav>
+            <a href="#hero" class="is-active" aria-label="Hero" title="Hero"></a>
+            <a href="#about" aria-label="The Mission" title="The Mission"></a>
+            <a href="#domains" aria-label="Challenges" title="Challenges"></a>
+            <a href="#prizes" aria-label="Bounty" title="Bounty"></a>
+            <a href="#timeline" aria-label="Protocol" title="Protocol"></a>
+            <a href="#guidelines" aria-label="Rules" title="Rules"></a>
+            <a href="#faq" aria-label="FAQ" title="FAQ"></a>
+            <a href="#register" aria-label="Accept the Mission" title="Accept the Mission"></a>
+        </nav>
+    <!-- </aside> -->
     <header id="main-header" class="sticky-header">
         <a href="#hero" class="logo">GOTHAM: ZERO HOUR</a>
         <nav aria-label="Main Navigation">
@@ -129,6 +144,7 @@
         <address>© 2026 Gotham: Zero Hour. Built for Builders.</address>
     </footer>
 
-    <script src="main.js" defer></script>
+    <script src="main.js"></script>
+    <!-- <script src="animations.js" defer></script> -->
 </body>
 </html>

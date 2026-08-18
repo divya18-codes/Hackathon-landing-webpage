@@ -1,0 +1,69 @@
+
+/* ==========================================
+   MOVIE-ACCURATE BAT-SIGNAL SPOTLIGHT
+   ========================================== */
+
+#hero {
+  position: relative !important;
+  background-color: #0a0c10;
+  overflow: hidden;
+}
+
+/* Movie-Accurate Bat-Signal Beam & Bat Silhouette */
+#hero::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 380px;
+  height: 240px;
+  pointer-events: none;
+  z-index: 1;
+
+  /* 1. Yellow Glowing Spotlight Beam */
+  background: radial-gradient(
+    ellipse at center, 
+    rgba(255, 200, 0, 0.45) 0%, 
+    rgba(255, 180, 0, 0.2) 50%, 
+    transparent 75%
+  );
+
+  /* 2. Classic Bat Silhouette SVG Mask */
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60"><path fill="black" d="M50 15c-4 0-7 4-10 6-3-4-8-7-14-7-11 0-18 8-18 19 0 12 12 19 23 22 6 2 13 2 19 0 11-3 23-10 23-22 0-11-7-19-18-19-6 0-11 3-14 7-3-2-6-6-10-6zM32 23c4 0 7 3 9 7-3 1-6 3-8 6-3-2-5-6-3-10-1-1 0-3 2-3zm36 0c2 0 3 2 2 3 2 4 0 8-3 10-2-3-5-5-8-6 2-4 5-7 9-7z"/></svg>'),
+                      radial-gradient(ellipse at center, black 0%, black 100%);
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60"><path fill="black" d="M50 15c-4 0-7 4-10 6-3-4-8-7-14-7-11 0-18 8-18 19 0 12 12 19 23 22 6 2 13 2 19 0 11-3 23-10 23-22 0-11-7-19-18-19-6 0-11 3-14 7-3-2-6-6-10-6zM32 23c4 0 7 3 9 7-3 1-6 3-8 6-3-2-5-6-3-10-1-1 0-3 2-3zm36 0c2 0 3 2 2 3 2 4 0 8-3 10-2-3-5-5-8-6 2-4 5-7 9-7z"/></svg>'),
+              radial-gradient(ellipse at center, black 0%, black 100%);
+  
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  /* 3. Atmospheric Flickering Cloud Animation */
+  animation: movieBatSignal 4s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 15px rgba(255, 200, 0, 0.6));
+}
+
+/* Ensure Text & Buttons Sit Above the Bat-Signal */
+#hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Flickering Cloud & Projection Motion */
+@keyframes movieBatSignal {
+  0% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(0.98) rotate(-1deg);
+    filter: drop-shadow(0 0 10px rgba(255, 200, 0, 0.4));
+  }
+  50% {
+    opacity: 0.95;
+    transform: translateX(-50%) scale(1.03) rotate(1deg);
+    filter: drop-shadow(0 0 25px rgba(255, 200, 0, 0.8));
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 15px rgba(255, 200, 0, 0.5));
+  }
+}

@@ -1,0 +1,352 @@
+:root {
+  --bg-dark: #0a0c10;
+  --bg-card: #12151c;
+  --bg-panel: #171d2a;
+  --gold: #ffc800;
+  --gold-strong: #f5af19;
+  --cyan: #00f0ff;
+  --crimson: #ff2a2a;
+  --text: #e0e6ed;
+  --muted: #8a99ad;
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 16px 30px rgba(0,0,0,0.35);
+  --glow: 0 0 15px rgba(255,200,0,0.2);
+  --glow-cyan: 0 0 15px rgba(0,240,255,0.2);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: linear-gradient(180deg, #090b0f, #0d1015 25%, #12171e);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: var(--gold-strong);
+}
+
+h1, h2, h3, h4, .logo, .btn-cta, .btn-primary, #bat-countdown time {
+  font-family: "Fira Code", "Courier New", monospace;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+p, li, label, small, th, td, .address {
+  color: var(--muted);
+}
+
+section {
+  padding: 4.5rem 5%;
+}
+
+#main-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 5%;
+  background: rgba(10,12,16,0.88);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  color: var(--gold);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  font-size: 0.9rem;
+}
+
+#main-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#main-header nav a {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.btn-cta, .btn-primary {
+  display: inline-block;
+  padding: 0.85rem 1.4rem;
+  background: var(--gold);
+  color: #111;
+  border: 1px solid var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn-cta:hover, .btn-primary:hover {
+  box-shadow: var(--glow);
+  transform: translateY(-1px);
+}
+
+#hero {
+  background: radial-gradient(circle at top, rgba(255,200,0,0.12), transparent 35%), #0d1015;
+  text-align: center;
+}
+
+#hero h1 {
+  font-size: clamp(2.6rem, 5vw, 5rem);
+  color: var(--gold);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(255,200,0,0.25);
+}
+
+#hero > p {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  color: var(--cyan);
+  font-size: 1.08rem;
+}
+
+.hero-stats, .grid, #bat-countdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.hero-stats {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.hero-stats div, #bat-countdown, .grid article, .details, .criteria, #guidelines article, #faq details, #register form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero-stats div {
+  padding: 1.3rem;
+}
+
+.hero-stats strong {
+  display: block;
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+#bat-countdown {
+  max-width: 700px;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  border-color: rgba(0,240,255,0.7);
+  box-shadow: var(--glow-cyan);
+}
+
+#bat-countdown time {
+  display: block;
+  font-size: clamp(1.6rem, 3vw, 2.7rem);
+  color: var(--cyan);
+  text-align: center;
+}
+
+#bat-countdown span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h2 {
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.details, .criteria {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.details td, .criteria td, .criteria th {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.details td:first-child, .criteria th {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.grid article, #guidelines article, #faq details, #register form {
+  padding: 1.3rem;
+}
+
+.grid article h3, .grid article strong, .grid article span {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.grid ul {
+  padding-left: 1.2rem;
+}
+
+.grid li {
+  margin: 0.35rem 0;
+}
+
+#prizes h3 {
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.timeline-list {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  max-width: 900px;
+}
+
+.timeline-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--gold);
+}
+
+.timeline-list li::before {
+  content: "";
+  position: absolute;
+  left: -0.45rem;
+  top: 0.35rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+#guidelines article {
+  margin-bottom: 1rem;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--cyan);
+  font-family: "Fira Code", monospace;
+}
+
+details {
+  margin-bottom: 0.9rem;
+}
+
+#register form {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+#register form > div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #0d1117;
+  color: var(--text);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 1px solid var(--gold);
+  box-shadow: 0 0 0 3px rgba(255,200,0,0.12);
+}
+
+#footer {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 1.5rem;
+  padding-bottom: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+#footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+
+address {
+  grid-column: 1 / -1;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-style: normal;
+  color: var(--muted);
+}
+
+[data-terminal="gcpd"] {
+  background-image: linear-gradient(rgba(0,255,255,0.04), rgba(0,255,255,0.04)), linear-gradient(transparent 50%, rgba(255,255,255,0.02) 50%);
+  background-size: 100% 4px, 100% 100%;
+}
+
+.grid article:hover, .bounty-podium article:hover, .domains-grid article:hover {
+  box-shadow: var(--glow);
+  border-color: rgba(255,200,0,0.5);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 760px) {
+  #main-header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #footer {
+    grid-template-columns: 1fr;
+  }
+
+  #bat-countdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
